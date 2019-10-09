@@ -1,0 +1,12 @@
+datasources:
+- name: 'InfluxDB'
+  type: 'influxdb'
+  access: 'Server'
+  org_id: 1
+  url: 'http://localhost:8086'
+  is_default: true
+  version: 1
+  editable: true
+  database: weather_db
+  password: INFLUXDB_ADMIN_PASSWORD
+  user: admin
