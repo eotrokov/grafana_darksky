@@ -1,0 +1,15 @@
+general:
+  debug: false
+  cron: '*/10 * * * * *'
+darksky:
+  key: 1f6bcd7d85f1d42cc69c6fad1a974197
+  units: si
+  language: ru
+  longitude: 55.756670
+  latitude: 52.054460
+influxdb:
+  host: influxdb 
+  database: weather_db
+  username: admin
+  password: INFLUXDB_ADMIN_PASSWORD
+
