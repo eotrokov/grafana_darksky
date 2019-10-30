@@ -5,9 +5,10 @@ const Influx = require('influx'),
 
 const generalConfig = config.get('general'),
     influxConfig = config.get('influxdb'),
-    darkskyConfig = config.get('darksky')
+    darkskyConfig = config.get('darksky'),
+    darkskyConfigKey = process.env.DARKSKY_KEY; 
 
-if (!darkskyConfig.key) {
+if (!darkskyConfigKey) {
     throw new Error('DarkSky key should be provided')
 }
 
@@ -42,7 +43,7 @@ const influx = new Influx.InfluxDB({
     ]
 })
 
-const darksky = new DarkSky(darkskyConfig.key);
+const darksky = new DarkSky(darkskyConfigKey);
 
 var getForecast = function () {
     darksky.forecast(darkskyConfig.latitude, darkskyConfig.longitude, {

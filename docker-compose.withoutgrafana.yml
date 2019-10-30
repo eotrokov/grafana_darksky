@@ -1,0 +1,17 @@
+version: '2.1'
+
+services:
+  darksky2influxdb:
+    image: darksky2influxdb
+    build: .
+    environment:
+      NODE_ENV: production
+      DARKSKY_KEY: 1f6bcd7d85f1d42cc69c6fad1a974197
+    depends_on: 
+    - influxdb
+  influxdb:
+    image: influxdb
+    env_file:
+    - 'env.influxdb'
+    ports:
+    - "8086:8086"
